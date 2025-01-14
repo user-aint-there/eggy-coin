@@ -22,21 +22,21 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('DDG_Banner3.png');
-    background-size: cover; /* Stretches the image across the width */
+    background-image: url('DuckDuckGoose_image/DDG_Banner3.png'); /* Replace with correct path */
+    background-size: cover;
     background-position: center;
-    filter: blur(20px); /* Blurs the background image */
-    z-index: 0; /* Keeps it in the background */
+    filter: blur(15px); /* Adjust blur level as desired */
+    z-index: 0;
 }
 
 /* Foreground Square Image */
 .banner-image {
     position: relative;
     width: auto;
-    height: 60%; /* Keeps the square proportions of the image */
-    max-height: 400px; /* Ensures it doesn't get too large */
+    height: 60%; /* Keeps the square proportions */
+    max-height: 400px; /* Limits size for larger screens */
     object-fit: contain;
-    z-index: 1; /* Places it above the background */
+    z-index: 1;
     margin: auto;
     display: block;
 }
@@ -74,7 +74,7 @@ header {
 
 .button:hover {
     background-color: #9a6e3a;
-    transform: translateY(-5px); /* Button hover effect */
+    transform: translateY(-5px);
 }
 
 /* Cards Section */
