@@ -39,6 +39,15 @@ header {
     z-index: 1;
     margin: auto;
     display: block;
+    border-radius: 20px; /* Curved edges */
+    transform: scale(1.1); /* Slightly enlarges the image */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    top: 10%; /* Adds space from the top edge */
+}
+
+/* Ensures the image centers and has a smooth transition */
+.banner-image:hover {
+    transform: scale(1.15); /* Slightly enlarges the image on hover */
 }
 
 /* Overlay to Soften Contrast */
