@@ -20,20 +20,21 @@ a {
 /* Banner Section */
 .banner {
     width: 100%;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
+    height: 300px; /* You can adjust the height based on your design */
+    background-image: url('Instagram_egg.jpg');
+    background-size: contain; /* Ensures the image fits without zooming */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white; /* In case the image doesn't fill the entire space */
 }
+
 
 .banner-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 0.5s ease-out;
+    height: auto; /* or you can specify a fixed height */
+    object-fit: contain; /* Ensures the image fits without distortion */
 }
+
 
 body.scrolled .banner-image {
     transform: translateY(-150px); /* Smooth up-scroll when page is scrolled */
