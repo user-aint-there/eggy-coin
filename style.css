@@ -11,26 +11,37 @@ body {
 header {
     position: relative;
     width: 100%;
-    height: 50vh; /* Dynamic height for better responsiveness */
+    height: 50vh; /* Dynamic height for responsiveness */
     overflow: hidden;
 }
 
-/* Banner container with blurred background */
+/* Background Image (Blurred) */
 .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-image: url('DDG_Banner3.png');
-    background-size: cover;
+    background-size: cover; /* Stretches the image across the width */
     background-position: center;
-    filter: blur(70px); /* Blurs the background image */
-    position: relative;
-    overflow: hidden;
+    filter: blur(20px); /* Blurs the background image */
+    z-index: 0; /* Keeps it in the background */
 }
 
-/* Overlay for better readability */
+/* Foreground Square Image */
+.banner-image {
+    position: relative;
+    width: auto;
+    height: 60%; /* Keeps the square proportions of the image */
+    max-height: 400px; /* Ensures it doesn't get too large */
+    object-fit: contain;
+    z-index: 1; /* Places it above the background */
+    margin: auto;
+    display: block;
+}
+
+/* Overlay to Soften Contrast */
 .banner::after {
     content: '';
     position: absolute;
@@ -38,17 +49,8 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.3); /* Semi-transparent overlay */
-    z-index: 0;
-}
-
-/* Foreground Banner Image */
-.banner-image {
-    width: auto;
-    height: 60%;
-    object-fit: contain;
-    position: relative;
-    z-index: 1; /* Keeps the image above the blurred background */
+    background: rgba(255, 255, 255, 0.2); /* Adds a soft overlay */
+    z-index: 1;
 }
 
 /* Button Section */
@@ -91,27 +93,25 @@ header {
 
 .card {
     background-color: #fff;
-    width: 320px; /* Increased the width */
-    height: 420px; /* Increased the height */
+    width: 320px;
+    height: 420px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
-    position: relative; /* Needed for absolute positioning of the description */
+    position: relative;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Card hover effect */
+    transform: translateY(-10px);
 }
 
-/* Image Styling */
 .card-image {
     width: 100%;
-    height: 70%; /* Image takes 70% of the card height */
+    height: 70%;
     object-fit: cover;
 }
 
-/* Description Styling */
 .card-description {
     position: absolute;
     bottom: 0;
@@ -121,15 +121,13 @@ header {
     font-size: 14px;
     padding: 15px;
     transition: transform 0.3s ease-out;
-    transform: translateY(100%); /* Initially hidden */
+    transform: translateY(100%);
 }
 
-/* On hover, description slides up */
 .card:hover .card-description {
     transform: translateY(0);
 }
 
-/* Footer Section */
 footer {
     text-align: center;
     padding: 20px;
