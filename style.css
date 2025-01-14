@@ -22,14 +22,14 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('DuckDuckGoose_image/DDG_Banner3.png'); /* Path for Home background */
+    background-image: url('DuckDuckGoose_image/DDG_Banner3.png'); /* Replace with correct path */
     background-size: cover;
     background-position: center;
-    filter: blur(15px); /* Adjust blur level */
+    filter: blur(15px); /* Adjust blur level as desired */
     z-index: 0;
 }
 
-/* Foreground Image (Sharp) */
+/* Foreground Square Image */
 .banner-image {
     position: relative;
     width: auto;
@@ -62,37 +62,7 @@ header {
     z-index: 1;
 }
 
-/*---------------------------------------------------------------ABOUT PAGE---------------------------------------------------------------------------*/
-
-/* Specific styles for About page */
-body.about-page {
-    background-color: #f4f4f4; /* Example: different background for About page */
-}
-
-/* Banner Section (About Page) */
-body.about-page header .banner {
-    background-image: url('DuckDuckGoose_image/about_banner.png'); /* Path for About background */
-    filter: blur(15px); /* Keep blur only on About background */
-}
-
-/* About Section Styling */
-.about-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.about-container h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.about-container p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* Social Media Buttons */
+/* Social Media Buttons (About Page) */
 .social-media-buttons {
     display: flex;
     justify-content: center;
@@ -131,6 +101,56 @@ body.about-page header .banner {
     background-color: rgb(171, 124, 67); /* Set color for Telegram button */
 }
 
+/* Cards Section */
+.cards-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    width: 320px;
+    height: 420px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.card-description {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 14px;
+    padding: 15px;
+    transition: transform 0.3s ease-out;
+    transform: translateY(100%);
+}
+
+.card:hover .card-description {
+    transform: translateY(0);
+}
 
 /* Footer Styles */
 footer {
@@ -162,4 +182,12 @@ footer {
     color: #0088cc;
 }
 
-/*-----------------------------------------------------------------------END OF ABOUT PAGE------------------------------------------------------------*/
+/* Specific styles for About Page */
+body.about-page {
+    background-color: #f4f4f4; /* Different background for About page */
+}
+
+.about-page header .banner {
+    background-image: url('DuckDuckGoose_image/about_banner.png'); /* Replace with correct path for About */
+    filter: blur(15px);
+}
