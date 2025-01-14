@@ -156,6 +156,34 @@ header {
 }
 
 /*-------------------------------------------------------------------------Donate Message-------------------------------------------------------------------------*/
+/* Global Banner Styles - Applies to all pages */
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('DuckDuckGoose_image/DDG_donation_.png'); /* Replace with the actual path */
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px); /* Blur effect applied globally */
+    z-index: 0;
+}
+
+/* Specific Styles for Donation Page */
+.donation-page header .banner {
+    filter: none; /* Remove blur */
+    transform: scale(1.1); /* Zoom in the banner */
+    background-position: center; /* Ensure the center is focused */
+    transition: transform 0.5s ease; /* Smooth transition for zoom effect */
+}
+
+/* Optional: Add a hover effect for better user interaction (Zoom effect) */
+.donation-page header .banner:hover {
+    transform: scale(1.2); /* Further zoom in on hover */
+}
+
+
 /* Donate Section Styling */
 .donate-message {
     background-color: #f4f4f4;
