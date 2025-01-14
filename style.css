@@ -8,136 +8,184 @@
 /* Body and background */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f5f5f5;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Header Styling */
-header {
-    background-color: #fff8e1; /* Light brown to complement the egg theme */
-    text-align: center;
-    padding: 50px 20px;
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header .logo-container {
-    margin-bottom: 20px;
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
 }
 
-header .logo {
-    max-width: 150px;
-    height: auto;
+.navbar .navbar-brand .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
-header h1 {
+.navbar h1 {
     font-family: 'Pacifico', cursive;
+    font-size: 2em;
     color: #f39c12;
-    font-size: 3em;
-    margin-bottom: 10px;
 }
 
-header .tagline {
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar .nav-links li {
     font-size: 1.2em;
-    color: #8e44ad;
+}
+
+.navbar .nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: #f39c12;
+}
+
+/* Hero Section */
+.hero {
+    background: url('egg-hero-bg.jpg') center/cover no-repeat;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .hero-content {
+    max-width: 600px;
+}
+
+.hero h2 {
+    font-size: 3em;
     margin-bottom: 20px;
 }
 
-header .cta-button {
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.hero .cta-button {
+    padding: 15px 30px;
     background-color: #f39c12;
     color: #fff;
-    padding: 12px 30px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    font-size: 1.2em;
     transition: background-color 0.3s ease;
 }
 
-header .cta-button:hover {
+.hero .cta-button:hover {
     background-color: #e67e22;
 }
 
-/* Section Styling */
+/* Section Styles */
 .section {
-    padding: 40px 20px;
+    padding: 80px 20px;
     text-align: center;
-    margin: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section h2 {
     font-size: 2.5em;
+    margin-bottom: 30px;
     color: #f39c12;
-    margin-bottom: 20px;
 }
 
 .section p {
     font-size: 1.1em;
-    color: #555;
+    margin-bottom: 40px;
 }
 
-/* Social Icons */
-.social-icons {
+/* Community Section */
+.community .social-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 30px;
 }
 
-.social-icon {
+.community .social-icon {
     font-size: 1.5em;
-    color: #fff;
     background-color: #8e44ad;
-    padding: 12px 20px;
+    color: white;
+    padding: 15px 25px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50%;
     transition: background-color 0.3s ease;
 }
 
-.social-icon:hover {
+.community .social-icon:hover {
     background-color: #9b59b6;
 }
 
 /* Roadmap Section */
 .roadmap {
+    background-color: #f9f9f9;
+}
+
+.roadmap-items {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    gap: 40px;
 }
 
 .roadmap-item {
-    background-color: #fff;
-    padding: 20px;
+    background-color: white;
+    padding: 30px;
     width: 30%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .roadmap-item h3 {
     font-size: 1.8em;
     color: #f39c12;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .roadmap-item p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #555;
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
     background-color: #8e44ad;
-    text-align: center;
     color: white;
+    text-align: center;
     padding: 20px;
-    font-size: 1em;
+    font-size: 1.2em;
+    letter-spacing: 1px;
 }
 
-footer p {
-    margin: 0;
-}
-
-/* Responsive Design */
+/* Media Query for Responsiveness */
 @media (max-width: 768px) {
-    .roadmap {
+    .roadmap-items {
         flex-direction: column;
         gap: 20px;
     }
@@ -146,11 +194,15 @@ footer p {
         width: 100%;
     }
 
-    header h1 {
+    .hero h2 {
         font-size: 2.5em;
     }
 
-    header .tagline {
-        font-size: 1em;
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .cta-button {
+        font-size: 1.1em;
     }
 }
