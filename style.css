@@ -11,81 +11,45 @@ body {
 header {
     position: relative;
     width: 100%;
-    height: 400px; /* Height of the banner */
+    height: 50vh; /* Dynamic height for better responsiveness */
     overflow: hidden;
 }
 
-/* Banner container */
+/* Banner container with blurred background */
 .banner {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #f7e3b5, #ab7c43);
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('DDG_Banner3.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px); /* Blurs the background image */
+    position: relative;
+    overflow: hidden;
 }
 
-.banner-image {
-  width: auto;
-  height: 100%;
-  object-fit: contain;
-}
-
-.banner {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: url('DDG_Banner3.png');
-  background-size: cover;
-  background-position: center;
-  filter: blur(50px); /* Blurs the background image */
-  position: relative;
-  overflow: hidden;
-}
-
-.banner-image {
-  width: auto;
-  height: 100%;
-  object-fit: contain;
-  position: relative;
-  z-index: 1; /* Keeps the image above the blurred background */
-}
-
+/* Overlay for better readability */
 .banner::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.3); /* Adds a slight overlay for better readability */
-  z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent overlay */
+    z-index: 0;
 }
 
-.banner {
-  animation: fadeIn 2s ease-in-out;
+/* Foreground Banner Image */
+.banner-image {
+    width: auto;
+    height: 60%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1; /* Keeps the image above the blurred background */
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-
-
-
-
-/* Effect: Make the image scroll up with the user 
-header:hover .banner-image {
-    transform: translateY(-20px);
-}*/
 
 /* Button Section */
 .button-section {
@@ -127,8 +91,8 @@ header:hover .banner-image {
 
 .card {
     background-color: #fff;
-    width: 300px; /* Increased the width */
-    height: 400px; /* Increased the height */
+    width: 320px; /* Increased the width */
+    height: 420px; /* Increased the height */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
