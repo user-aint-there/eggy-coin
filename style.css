@@ -86,6 +86,29 @@ header {
     transform: translateY(-5px);
 }
 
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: #333;
+}
+
+/* Specific styles for the About page */
+body.about-page {
+    background-color: #f4f4f4; /* Example: different background for About page */
+}
+
+/* Banner Section for About Page */
+.about-page header .banner {
+    background-image: url('DuckDuckGoose_image/about_banner.png'); /* Replace with correct path */
+    filter: blur(15px); /* Adjust blur level for About page */
+}
+
+/* Add more About page-specific styles here */
+
+
 /* Cards Section */
 .cards-section {
     padding: 40px 20px;
@@ -143,3 +166,4 @@ footer {
     background-color: #333;
     color: white;
 }
+
