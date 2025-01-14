@@ -25,7 +25,7 @@ header {
     background-image: url('DDG_Banner3.png');
     background-size: cover;
     background-position: center;
-    filter: blur(20px); /* Blurs the background image */
+    filter: blur(70px); /* Blurs the background image */
     position: relative;
     overflow: hidden;
 }
