@@ -18,37 +18,74 @@ header {
 /* Banner container */
 .banner {
   width: 100%;
-  height: 50vh; /* Dynamic height based on screen size */
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ab7c43; /* Background color for empty space */
-  overflow: hidden; /* Prevent overflow issues */
+  background: linear-gradient(135deg, #f7e3b5, #ab7c43);
+  overflow: hidden;
 }
 
-/* Square image styling */
 .banner-image {
-  width: auto; /* Adjust width dynamically */
-  height: 100%; /* Fill the height of the banner */
-  object-fit: contain; /* Ensure the image keeps its square proportions */
+  width: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
-/* Adjustments for smaller screens (e.g., smartphones) */
-@media (max-width: 768px) {
-  .banner {
-    height: 30vh; /* Smaller banner height for mobile devices */
-  }
+.banner {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('yDDG_Banner3.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px); /* Blurs the background image */
+  position: relative;
+  overflow: hidden;
+}
 
-  .banner-image {
-    height: 100%; /* Image still fills the container height */
+.banner-image {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 1; /* Keeps the image above the blurred background */
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.3); /* Adds a slight overlay for better readability */
+  z-index: 0;
+}
+
+.banner {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
 
-/* Effect: Make the image scroll up with the user */
+
+
+
+/* Effect: Make the image scroll up with the user 
 header:hover .banner-image {
     transform: translateY(-20px);
-}
+}*/
 
 /* Button Section */
 .button-section {
