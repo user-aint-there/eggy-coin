@@ -1,122 +1,104 @@
-/* Global Styles */
-* {
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
     background-color: white;
     color: #333;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
 }
 
 /* Banner Section */
-.banner {
+header {
+    position: relative;
     width: 100%;
-    height: 300px; /* You can adjust the height */
-    background-image: url('Instagram_egg.jpg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #ab7c43; /* Matches your color theme */
-}
-
-
-
-.banner-image {
-    max-width: 100%; /* Limits the width of the image */
-    max-height: 100%; /* Limits the height of the image */
-    display: block;
-    margin: 0 auto; /* Centers the image */
-}
-
-
-
-body.scrolled .banner-image {
-    transform: translateY(-150px); /* Smooth up-scroll when page is scrolled */
-}
-
-/* Main Content Section */
-.main-content {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-/* Button Container */
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.cta-button {
-    background-color: #ab7c43;
-    color: white;
-    text-decoration: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    border-radius: 8px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #8c5a30;
-    transform: translateY(-5px);
-}
-
-/* AI Generated Egg Image Rotation */
-.egg-rotation {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    gap: 20px;
+    height: 400px; /* Height of the banner */
     overflow: hidden;
 }
 
-.egg-image {
-    width: 200px;
-    height: 200px;
+.banner-image {
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    border-radius: 10px;
-    opacity: 0;
-    animation: rotateEggs 12s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.3s ease-out;
 }
 
-@keyframes rotateEggs {
-    0%, 33%, 66%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    25%, 58%, 75% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
+/* Effect: Make the image scroll up with the user */
+header:hover .banner-image {
+    transform: translateY(-20px);
 }
 
-/* Section Styles */
-.section {
-    padding: 50px 20px;
+/* Button Section */
+.button-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.button {
+    background-color: #ab7c43;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #9a6e3a;
+    transform: translateY(-5px); /* Button hover effect */
+}
+
+/* Cards Section */
+.cards-section {
+    padding: 40px 20px;
     text-align: center;
     background-color: #f9f9f9;
 }
 
-h2 {
-    color: #ab7c43;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
-p {
-    font-size: 1.2em;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
+.card {
+    background-color: #fff;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Card hover effect */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-description {
+    padding: 15px;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }
