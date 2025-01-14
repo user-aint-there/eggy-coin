@@ -1,9 +1,11 @@
-// Smooth scrolling for CTA button
-document.querySelector('.cta-button').addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    window.scrollTo({
-        top: target.offsetTop - 50, // Adjust for padding
-        behavior: 'smooth'
-    });
+// Handle Scroll Effect on Banner
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const bannerImage = document.querySelector('.banner-image');
+
+    if (scrollY > 100) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
 });
