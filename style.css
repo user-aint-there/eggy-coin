@@ -62,30 +62,6 @@ header {
     z-index: 1;
 }
 
-/* Button Section */
-.button-section {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.button {
-    background-color: #ab7c43;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.button:hover {
-    background-color: #9a6e3a;
-    transform: translateY(-5px);
-}
-
 /*---------------------------------------------------------------ABOUT PAGE---------------------------------------------------------------------------*/
 
 /* Specific styles for About page */
@@ -116,6 +92,43 @@ body.about-page header .banner {
     color: #555;
 }
 
+/* Social Media Buttons */
+.social-media-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.button {
+    background-color: #ab7c43;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.twitter-button {
+    background-color: #1DA1F2;
+}
+
+.telegram-button {
+    background-color: #0088cc;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+}
+
+.button:active {
+    transform: translateY(2px);
+}
+
 /* Footer Styles */
 footer {
     text-align: center;
@@ -124,5 +137,26 @@ footer {
     color: white;
 }
 
-/*---------------------------------------------------------------END OF ABOUT PAGE------------------------------------------------------------*/
+.social-media-footer {
+    margin-top: 10px;
+}
 
+.social-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.social-link:hover {
+    text-decoration: underline;
+}
+
+.social-link.twitter-footer {
+    color: #1DA1F2;
+}
+
+.social-link.telegram-footer {
+    color: #0088cc;
+}
+
+/*-----------------------------------------------------------------------END OF ABOUT PAGE------------------------------------------------------------*/
