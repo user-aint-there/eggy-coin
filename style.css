@@ -101,7 +101,7 @@ body.about-page header .banner {
 }
 
 .button {
-    background-color: #ab7c43;
+    background-color: rgb(171, 124, 67); /* Set to the desired color */
     color: white;
     border: none;
     padding: 15px 30px;
@@ -113,14 +113,6 @@ body.about-page header .banner {
     display: inline-block;
 }
 
-.twitter-button {
-    background-color: #1DA1F2;
-}
-
-.telegram-button {
-    background-color: #0088cc;
-}
-
 .button:hover {
     transform: translateY(-5px);
 }
@@ -128,6 +120,17 @@ body.about-page header .banner {
 .button:active {
     transform: translateY(2px);
 }
+
+/* Button Styling for Twitter */
+.twitter-button {
+    background-color: rgb(171, 124, 67); /* Set color for Twitter button */
+}
+
+/* Button Styling for Telegram */
+.telegram-button {
+    background-color: rgb(171, 124, 67); /* Set color for Telegram button */
+}
+
 
 /* Footer Styles */
 footer {
