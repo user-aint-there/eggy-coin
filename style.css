@@ -38,10 +38,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('yDDG_Banner3.png');
+  background-image: url('DDG_Banner3.png');
   background-size: cover;
   background-position: center;
-  filter: blur(20px); /* Blurs the background image */
+  filter: blur(10px); /* Blurs the background image */
   position: relative;
   overflow: hidden;
 }
