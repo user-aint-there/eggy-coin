@@ -20,20 +20,23 @@ a {
 /* Banner Section */
 .banner {
     width: 100%;
-    height: 300px; /* You can adjust the height based on your design */
+    height: 300px; /* You can adjust the height */
     background-image: url('Instagram_egg.jpg');
-    background-size: contain; /* Ensures the image fits without zooming */
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: white; /* In case the image doesn't fill the entire space */
+    background-color: #ab7c43; /* Matches your color theme */
 }
+
 
 
 .banner-image {
-    width: 100%;
-    height: auto; /* or you can specify a fixed height */
-    object-fit: contain; /* Ensures the image fits without distortion */
+    max-width: 100%; /* Limits the width of the image */
+    max-height: 100%; /* Limits the height of the image */
+    display: block;
+    margin: 0 auto; /* Centers the image */
 }
+
 
 
 body.scrolled .banner-image {
