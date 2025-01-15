@@ -97,6 +97,110 @@ body.home-page .button-section {
 }
 
 /*-----------------------------------------------------------------------------------*/
+
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background for a welcoming feel */
+    color: #333;
+}
+
+/* Banner Section */
+header {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+}
+
+/*.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px);
+    z-index: 0;
+}
+
+.banner-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+*/
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.welcome-section h1 {
+    font-size: 36px;
+    color: #ab7c43; /* Warm color to match DDG Coin theme */
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* About Section */
+.about-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.about-section h2 {
+    font-size: 30px;
+    color: #ab7c43;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Donate Section */
+.Donate-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.Donate-section h2 {
+    font-size: 30px;
+    color: #ab7c43;
+    margin-bottom: 20px;
+}
+
+.Donate-section p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+
 /* General Styles for Paragraphs (About and Donation Pages) */
 .donate-message, .about-page .about-section {
     padding: 20px; /* Add padding to ensure content isn't on the left edge */
@@ -144,6 +248,34 @@ body.donation-page #send-donation-btn {
     margin-top: 20px;
 }
 
+
+/* Connect Wallet Button - Blue with Rounded Edges */
+.connect-wallet-btn {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 25px; /* Rounded edges */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px auto; /* Center the button */
+}
+
+/* Button Hover Effect */
+.connect-wallet-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-5px);
+}
+
+/* Button Active Effect */
+.connect-wallet-btn:active {
+    transform: translateY(2px);
+}
+
+
 /*-------------------------------------------------------------------------------*/
 
 /* Cards Section */
@@ -181,6 +313,30 @@ body.donation-page #send-donation-btn {
     object-fit: cover;
 }
 
+
+/* Card Container */
+.card {
+    background-color: transparent;  /* Remove default background */
+    width: 320px;  /* Adjusted size for desktop */
+    height: 380px;  /* Slightly reduced height for better proportions */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;  /* Smooth move effect */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image inside the card */
+.card-image {
+    width: 100%;
+    height: 70%;  /* Adjust the image size so that there's a small space at the bottom */
+    object-fit: cover;  /* Ensures the image covers the entire card */
+    transition: transform 0.3s ease;  /* Smooth transition when hovering */
+}
+
+/* White background for description that is hidden by default */
 .card-description {
     position: absolute;
     bottom: 0;
@@ -188,14 +344,73 @@ body.donation-page #send-donation-btn {
     background-color: #f5f5f5;
     color: #333;
     font-size: 14px;
+    text-align: center;
     padding: 15px;
-    transition: transform 0.3s ease-out;
-    transform: translateY(100%);
+    opacity: 0;  /* Initially hidden */
+    visibility: hidden;  /* Ensure it's hidden */
+    transform: translateY(100%);  /* Start from below the card */
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;  /* Smooth transition */
+    box-sizing: border-box;  /* Prevent text from overflowing */
 }
 
-.card:hover .card-description {
-    transform: translateY(0);
+/* Title inside the card */
+.card-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
 }
+
+/* Hover behavior for desktop */
+.card:hover .card-description {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);  /* Move up from the bottom */
+}
+
+/* Hover behavior for entire card */
+.card:hover .card-image {
+    transform: scale(1.05);  /* Slight zoom effect on image */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Moves the entire card up */
+}
+
+/* Mobile behavior */
+@media (max-width: 768px) {
+    .card {
+        width: 280px;  /* Narrower cards for mobile */
+        height: 420px;  /* Slightly taller to match mobile format */
+        flex-direction: column;  /* Keep card in a vertical stack */
+        border-radius: 15px;  /* Rounded corners */
+    }
+
+    .card-image {
+        height: 65%;  /* Image takes up a large portion of the card */
+    }
+
+    .card-description {
+        opacity: 1;  /* Always visible on mobile */
+        visibility: visible;  /* Ensure description is visible */
+        transform: translateY(0);  /* No animation on mobile */
+        text-align: center;  /* Align text in the center for mobile */
+        padding: 10px;
+        box-sizing: border-box;  /* Prevent text from overflowing */
+    }
+
+    .card-title {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+
+
+
+
+
+
+
 
 /* Footer Styles */
 footer {
