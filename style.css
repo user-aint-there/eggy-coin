@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 
-/* Banner Section */
+/* Banner Section - Default Styles */
 header {
     position: relative;
     width: 100%;
@@ -15,21 +15,19 @@ header {
     overflow: hidden;
 }
 
-/* Background Image (Blurred) */
 .banner {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('DuckDuckGoose_image/DDG_Banner3.png'); /* Replace with correct path */
     background-size: cover;
     background-position: center;
-    filter: blur(0px); /* Adjust blur level as desired */
-    z-index: 60;
+    filter: blur(15px); /* Default blur for all banners */
+    z-index: 0;
 }
 
-/* Foreground Square Image */
+/* Foreground Square Image (Shared for All Pages) */
 .banner-image {
     position: relative;
     width: auto;
@@ -45,9 +43,8 @@ header {
     top: 10%; /* Adds space from the top edge */
 }
 
-/* Ensures the image centers and has a smooth transition */
 .banner-image:hover {
-    transform: scale(1.15); /* Slightly enlarges the image on hover */
+    transform: scale(1.15); /* Enlarges the image on hover */
 }
 
 /* Overlay to Soften Contrast */
@@ -62,19 +59,28 @@ header {
     z-index: 1;
 }
 
-/* Button Section on Home Page */
+/* Donation Page Banner - No Blur, Zoom Effect */
+body.donation-page .banner {
+    filter: none; /* Removes blur */
+    transform: scale(1.1); /* Zooms in the banner */
+    background-position: center; /* Centers the background */
+    transition: transform 0.5s ease; /* Smooth zoom effect */
+}
+
+body.donation-page .banner:hover {
+    transform: scale(1.2); /* Further zoom on hover for Donation Page */
+}
+
+/* Button Section - Shared for Home Page */
 .button-section {
     display: flex;
-    justify-content: center; /* Centers buttons horizontally */
-    align-items: center; /* Ensures buttons are vertically aligned */
-    gap: 20px; /* Spacing between buttons */
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
-    width: 100%; /* Ensures container takes full width */
-    text-align: center; /* Centers text */
 }
 
 .button {
-    background-color: #ab7c43; /* Button color */
+    background-color: #ab7c43;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -83,7 +89,6 @@ header {
     border-radius: 8px;
     transition: all 0.3s ease;
     text-decoration: none;
-    display: inline-block;
 }
 
 .button:hover {
@@ -91,17 +96,33 @@ header {
     transform: translateY(-5px);
 }
 
-/* Button Styling for Each Button */
-.about-button {
-    background-color: rgb(171, 124, 67); /* Customize for About button */
+/* Social Media Buttons (About Page) */
+.social-media-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px; /* Adds space from footer */
 }
 
-.roadmap-button {
-    background-color: rgb(171, 124, 67); /* Customize for Roadmap button */
+.social-button {
+    background-color: rgb(171, 124, 67);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
-.dexscreener-button {
-    background-color: rgb(171, 124, 67); /* Customize for Dexscreener button */
+.social-button:hover {
+    transform: translateY(-5px);
+}
+
+.social-button:active {
+    transform: translateY(2px);
 }
 
 /* Cards Section */
@@ -155,141 +176,6 @@ header {
     transform: translateY(0);
 }
 
-/*-------------------------------------------------------------------------Donate Message-------------------------------------------------------------------------*/
-/* Global Banner Styles - Applies to all pages */
-.banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('DuckDuckGoose_image/DDG_donation_.png'); /* Replace with the actual path */
-    background-size: cover;
-    background-position: center;
-    filter: blur(15px); /* Blur effect applied globally */
-    z-index: 0;
-}
-
-/* Specific Styles for Donation Page */
-.donation-page header .banner {
-    filter: none; /* Remove blur */
-    transform: scale(1.1); /* Zoom in the banner */
-    background-position: center; /* Ensure the center is focused */
-    transition: transform 0.5s ease; /* Smooth transition for zoom effect */
-}
-
-/* Optional: Add a hover effect for better user interaction (Zoom effect) */
-.donation-page header .banner:hover {
-    transform: scale(1.2); /* Further zoom in on hover */
-}
-
-
-/* Donate Section Styling */
-.donate-message {
-    background-color: #f4f4f4;
-    padding: 40px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-}
-
-.donate-message p {
-    font-size: 18px;
-    color: #333;
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-.donate-message p:last-child {
-    font-size: 20px;
-    font-weight: bold;
-    color: #0088cc;
-}
-
-/* Heart emoji styling */
-.donate-message p:last-child span {
-    font-size: 22px;
-    color: #e0245e; /* Pink color for the heart */
-}
-
-/* Donate Section Styling */
-.donate-message {
-    background-color: #f4f4f4;
-    padding: 40px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-}
-
-.donate-message p {
-    font-size: 18px;
-    color: #333;
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-.donate-message p:last-child {
-    font-size: 20px;
-    font-weight: bold;
-    color: #0088cc;
-}
-
-/* Heart emoji styling */
-.donate-message p:last-child span {
-    font-size: 22px;
-    color: #e0245e; /* Pink color for the heart */
-}
-/*-------------------------------------------------------------------------Donate Message End-------------------------------------------------------------------------*/
-
-
-/*-------------------------------------------------------------------------Donate-------------------------------------------------------------------------------------*/
-/* Connect Wallet Button */
-.connect-wallet-btn {
-    background-color: #0088cc;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 8px;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.connect-wallet-btn:hover {
-    background-color: #006fa6;
-    transform: translateY(-5px);
-}
-
-.connect-wallet-btn:active {
-    transform: translateY(2px);
-}
-
-/* Donation Send Button */
-.donate-btn {
-    background-color: #ff8c00;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-.donate-btn:hover {
-    background-color: #e07a00;
-    transform: translateY(-5px);
-}
-
-.donate-btn:active {
-    transform: translateY(2px);
-}
-
-/*-------------------------------------------------------------------------Donate END-------------------------------------------------------------------------*/
-
 /* Footer Styles */
 footer {
     text-align: center;
@@ -298,7 +184,6 @@ footer {
     color: white;
 }
 
-/* Social Media Links in Footer */
 .social-media-footer {
     margin-top: 10px;
 }
@@ -321,39 +206,16 @@ footer {
     color: #0088cc;
 }
 
-/* Social Media Buttons on About Page (Adjusted to avoid touching edge) */
-.social-media-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-    padding-bottom: 20px; /* Adds space below buttons */
-    margin-bottom: 40px; /* Ensures there's space between buttons and footer */
-}
-
-.button {
-    background-color: rgb(171, 124, 67); /* Button color */
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.button:hover {
-    transform: translateY(-5px);
-}
-
-/* Specific styles for About Page */
+/* Specific Styles for About Page */
 body.about-page {
-    background-color: #f4f4f4; /* Different background for About page */
+    background-color: #f4f4f4;
 }
 
 .about-page header .banner {
-    background-image: url('DuckDuckGoose_image/about_banner.png'); /* Replace with correct path for About */
-    filter: blur(15px);
+    background-image: url('DuckDuckGoose_image/about_banner.png'); /* Path for About Page Banner */
+}
+
+/* Centered Buttons for Home Page */
+body.home-page .button-section {
+    justify-content: center;
 }
