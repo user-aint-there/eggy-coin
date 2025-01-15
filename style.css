@@ -15,6 +15,7 @@ header {
     overflow: hidden;
 }
 
+/* The banner class that holds the background image */
 .banner {
     position: absolute;
     top: 0;
@@ -23,31 +24,32 @@ header {
     height: 100%;
     background-size: cover;
     background-position: center;
-    filter: blur(15px); /* Default blur for all banners */
     z-index: 0;
+    transition: transform 0.5s ease;
+    filter: none; /* Set to none by default */
 }
 
-/* Foreground Square Image (Shared for All Pages) */
+/* Image on top of the banner */
 .banner-image {
     position: relative;
     width: auto;
-    height: 60%; /* Keeps the square proportions */
-    max-height: 400px; /* Limits size for larger screens */
+    height: 60%;
+    max-height: 400px;
     object-fit: contain;
     z-index: 1;
     margin: auto;
     display: block;
-    border-radius: 20px; /* Curved edges */
-    transform: scale(1.1); /* Slightly enlarges the image */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
-    top: 10%; /* Adds space from the top edge */
+    border-radius: 20px;
+    transform: scale(1.1); /* Slight zoom effect for image */
+    transition: transform 0.3s ease;
+    top: 10%;
 }
 
+/* Banner effects for hover */
 .banner-image:hover {
-    transform: scale(1.15); /* Enlarges the image on hover */
+    transform: scale(1.15); /* Slight zoom effect on hover */
 }
 
-/* Overlay to Soften Contrast */
 .banner::after {
     content: '';
     position: absolute;
@@ -55,24 +57,63 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.2); /* Adds a soft overlay */
+    background: rgba(255, 255, 255, 0.2); /* Soft overlay */
     z-index: 1;
 }
 
-/* Donation Page Banner - No Blur, Zoom Effect */
+/* Specific page background images and effects */
+
+/* Home Page Banner */
+body.home-page .banner {
+    background-image: url('DuckDuckGoose_image/DDG_Banner3.png'); /* Ensure the path is correct */
+    filter: blur(15px); /* Blurred background for home page */
+}
+
+/* About Page Banner */
+body.about-page .banner {
+    background-image: url('DuckDuckGoose_image/about_banner.png'); /* Ensure the path is correct */
+    filter: blur(15px); /* Apply blur only to the background */
+}
+
+
+
+/* Donation Page Banner */
 body.donation-page .banner {
-    filter: none; /* Removes blur */
-    transform: scale(1.1); /* Zooms in the banner */
-    background-position: center; /* Centers the background */
-    transition: transform 0.5s ease; /* Smooth zoom effect */
+    background-image: url('DuckDuckGoose_image/DDG_donation.png'); /* Ensure the path is correct */
+    filter: blur(15px); /* Apply blur to the background of the donation page */
 }
 
+
+/* Banner hover effect for all pages */
+body.home-page .banner:hover,
+body.about-page .banner:hover,
 body.donation-page .banner:hover {
-    transform: scale(1.2); /* Further zoom on hover for Donation Page */
+    transform: scale(1.2);
 }
 
-/* Button Section - Shared for Home Page */
-.button-section {
+/* Centered Buttons for Home Page */
+body.home-page .button-section {
+    justify-content: center;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* General Styles for Paragraphs (About and Donation Pages) */
+.donate-message, .about-page .about-section {
+    padding: 20px; /* Add padding to ensure content isn't on the left edge */
+    max-width: 800px; /* Limit the width for readability */
+    margin: 0 auto; /* Center the content */
+    text-align: center; /* Center the text */
+}
+
+/* Styles for the donation page section */
+body.donation-page .Donate-section {
+    padding: 20px; /* Add padding around the content */
+    max-width: 800px; /* Limit width */
+    margin: 0 auto; /* Center the content */
+}
+
+/* Fixing Button Section on Donation Page */
+body.donation-page .button-section {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -96,34 +137,14 @@ body.donation-page .banner:hover {
     transform: translateY(-5px);
 }
 
-/* Social Media Buttons (About Page) */
-.social-media-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-    margin-bottom: 40px; /* Adds space from footer */
+/* Make sure the buttons on the donation page are centered and have consistent styling */
+body.donation-page #connect-wallet-btn, 
+body.donation-page #send-donation-btn {
+    display: inline-block;
+    margin-top: 20px;
 }
 
-.social-button {
-    background-color: rgb(171, 124, 67);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.social-button:hover {
-    transform: translateY(-5px);
-}
-
-.social-button:active {
-    transform: translateY(2px);
-}
+/*-------------------------------------------------------------------------------*/
 
 /* Cards Section */
 .cards-section {
@@ -206,16 +227,74 @@ footer {
     color: #0088cc;
 }
 
-/* Specific Styles for About Page */
-body.about-page {
-    background-color: #f4f4f4;
-}
-
-.about-page header .banner {
-    background-image: url('DuckDuckGoose_image/about_banner.png'); /* Path for About Page Banner */
-}
-
-/* Centered Buttons for Home Page */
-body.home-page .button-section {
+/* Social Media Buttons (About Page) */
+.social-media-buttons {
+    display: flex;
     justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px; /* Adds space from footer */
+}
+
+.social-button {
+    background-color: rgb(171, 124, 67);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-button:hover {
+    transform: translateY(-5px);
+}
+
+.social-button:active {
+    transform: translateY(2px);
+}
+
+/* Centered Content for About and Donation Pages */
+.page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        padding: 10px;
+    }
+}
+
+/* Button Styles */
+.button-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.button {
+    background-color: #ab7c43;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #9a6e3a;
+    transform: translateY(-5px);
 }
